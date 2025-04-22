@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>NP-Complete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/code.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$'], ['\\(', '\\)'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script src="https://kit.fontawesome.com/cbfa384e35.js" crossorigin="anonymous"></script>
+    <!--
+    A little hack, to make sure nested pages are viewed properly.
+    For more details, see http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included/14254928#14254928
+    -->
+    {% assign lvl = page.url | append:'X' | split:'/' | size %}
+    {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+    <link rel="stylesheet" type="text/css" href="{{ relative }}stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ relative }}stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{ relative }}stylesheets/github-light.css" media="screen">
+  </head>
+
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">
+        <a href="https://richard-eipi.github.io/" style="color:white">
+          NP-Complete <i class="fa-solid fa-house-chimney" style="color: #ffffff;"></i>
+        </a>
+      </h1>
+      <br>
+      <a href="https://richard-eipi.github.io/NP-Complete-Foundations.html" class="btn">Foundations</a>
+      <a href="https://richard-eipi.github.io/NP-Complete-Family-Tree.html" class="btn">Family Tree</a>
+    </section>
+
+    <section class="main-content">
+      <div id="announcement" style="display: none;">
+        <span class="announcement-span">
+          <i class="fa-solid fa-bullhorn fa-lg"></i>
+          <p style="margin-left: 0.8rem;">
+            Latest update (2024/12/31):
+            Year end special - <a href="https://richard-eipi.github.io/NP-Complete-Family/Cooperative-Two-Player-Uno.html"> Cooperative Two Player Uno </a>
+            <br>
+          </p>
+          <p onclick="closeAnnouncement()", style="cursor: pointer; margin-left: auto;">
+            <i class="fa-sharp fa-solid fa-circle-xmark fa-lg" style="color: #ff0000;"></i>
+          </p>
+        </span>
+      </div>
+      {{content}}
+      <br>
+      <footer class="site-footer">
+        <span class="site-footer-credits">
+          This page uses the <a href="https://github.com/jasonlong/cayman-theme">Cayman Theme</a>.
+        </span>
+      </footer>
+    </section>
+  </body>
+</html>
